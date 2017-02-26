@@ -3,7 +3,7 @@ Luna
 
 Club Penguin Server Emulator - AS2 Protocol
 
-Project has been discontinued, support will no longer be provided either.
+Project has been discontinued but you can get support <a href="https://github.com/OliverBoy/Luna/issues">here.</a>
 
 ![](https://i.imgur.com/rD2hLCu.png)
 ![](https://i.imgur.com/mp0LDld.png)
@@ -25,17 +25,17 @@ Project has been discontinued, support will no longer be provided either.
 ### Instructions:
 <ul>
  <li> Install PHP and setup a webserver - <a href="http://www.wikihow.com/Install-XAMPP-for-Windows">Windows</a>/<a href="https://www.rosehosting.com/blog/how-to-install-lamp-linux-apache-mysql-php-and-phpmyadmin-on-a-debian-8-vps/">Linux</a></li>
- <li> Install all the Perl modules from the <a href="https://github.com/titshacking/Luna#modules">modules list</a></li>
+ <li> Install all the Perl modules from the modules list</a></li>
  <ul>
  <li>  First install <b>CPAN</b> and after that type: <code>reload cpan</code> and then continue installing the other modules</li>
  <li> If some modules fail to install or refuse to install then install those particular modules manually, click <a href="http://www.thegeekstuff.com/2008/09/how-to-install-perl-modules-manually-and-using-cpan-command/">here</a> to know how to do manual installation of modules or use <code>force install</code> to install them</li>
  <li> If you are still not able to install the modules by yourself, you can create an issue but do not create an issue if you did not try the above</li>
  </ul>
  <li> Setup an AS2 Media Server</li>
- <li> Import the <a href="https://github.com/titshacking/Luna/blob/master/SQL/Database.sql">SQL</a> using <b>Phpmyadmin/Adminer</b></li>
+ <li> Import the <a href="https://github.com/OliverBoy/Luna/blob/master/SQL/Database.sql">SQL</a> using <b>Phpmyadmin/Adminer</b></li>
  <li> Create an account through the database</li>
- <li> Edit <a href="https://github.com/titshacking/Luna/blob/master/Configuration/Config.pl">Config.pl</a></li>
- <li> Execute <a href="https://github.com/titshacking/Luna/blob/master/Run.pm">Run.pm</a></li>
+ <li> Edit <a href="https://github.com/OliverBoy/Luna/blob/master/Configuration/Config.pl">Config.pl</a></li>
+ <li> Execute <a href="https://github.com/OliverBoy/Luna/blob/master/Run.pm">Run.pm</a></li>
 </ul>
 
 ### Modules: 
@@ -60,7 +60,7 @@ Project has been discontinued, support will no longer be provided either.
 
 ### Windows Setup: 
 
-https://solero.me/topic/39002-how-to-setup-lunawindows/
+https://aureus.pw/topic/167-luna-how-to-create-a-cpps-on-localhost/
 
 ### Linux VPS and PC Setup:
 
@@ -149,10 +149,10 @@ reload CPAN
 ```
 
 
-Now using the <a href="https://github.com/titshacking/Luna#modules">modules list</a> go ahead and install each of those modules except <b>CPAN</b> since we already updated it. Usually after installing a module, it will display a status to let you know if it is installed or not so please be aware of it.
+Now using the modules list go ahead and install each of those modules except <b>CPAN</b> since we already updated it. Usually after installing a module, it will display a status to let you know if it is installed or not so please be aware of it.
 
 
-After you have done that, download <a href="https://github.com/titshacking/Luna/archive/master.zip">Luna</a> and unzip it and store it somewhere in your server.
+After you have done that, download <a href="https://github.com/OliverBoy/Luna/archive/master.zip">Luna</a> and unzip it and store it somewhere in your server.
 
 
 Now lets import the SQL onto Phpmyadmin:
