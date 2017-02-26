@@ -1,0 +1,193 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Feb 26, 2017 at 07:18 PM
+-- Server version: 5.5.54-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `Luna`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donations`
+--
+
+CREATE TABLE IF NOT EXISTS `donations` (
+  `ID` int(11) NOT NULL,
+  `username` longtext NOT NULL,
+  `donation` int(11) NOT NULL,
+  `donate_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `igloos`
+--
+
+CREATE TABLE IF NOT EXISTS `igloos` (
+  `ID` int(11) NOT NULL,
+  `username` char(20) NOT NULL,
+  `igloo` int(10) NOT NULL DEFAULT '1',
+  `floor` int(10) NOT NULL DEFAULT '0',
+  `music` int(10) NOT NULL DEFAULT '0',
+  `furniture` longblob NOT NULL,
+  `ownedFurns` longblob NOT NULL,
+  `ownedIgloos` longblob NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `igloo_contest`
+--
+
+CREATE TABLE IF NOT EXISTS `igloo_contest` (
+  `ID` int(11) NOT NULL,
+  `username` longtext NOT NULL,
+  `signup_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `postcards`
+--
+
+CREATE TABLE IF NOT EXISTS `postcards` (
+  `postcardID` int(10) NOT NULL AUTO_INCREMENT,
+  `recepient` int(10) NOT NULL,
+  `mailerName` char(12) NOT NULL,
+  `mailerID` int(10) NOT NULL,
+  `notes` char(12) NOT NULL,
+  `timestamp` int(8) NOT NULL,
+  `postcardType` int(5) NOT NULL,
+  `isRead` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`postcardID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `puffles`
+--
+
+CREATE TABLE IF NOT EXISTS `puffles` (
+  `puffleID` int(11) NOT NULL AUTO_INCREMENT,
+  `ownerID` int(2) NOT NULL,
+  `puffleName` char(10) NOT NULL,
+  `puffleType` int(2) NOT NULL,
+  `puffleEnergy` int(3) NOT NULL DEFAULT '100',
+  `puffleHealth` int(3) NOT NULL DEFAULT '100',
+  `puffleRest` int(3) NOT NULL DEFAULT '100',
+  `puffleWalking` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`puffleID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `servers`
+--
+
+CREATE TABLE IF NOT EXISTS `servers` (
+  `servType` varchar(10) NOT NULL DEFAULT 'game',
+  `servPort` int(5) NOT NULL,
+  `servName` char(20) NOT NULL,
+  `servIP` mediumblob NOT NULL,
+  `curPop` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`servType`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` char(20) NOT NULL,
+  `nickname` char(20) NOT NULL,
+  `password` char(32) NOT NULL,
+  `spin` int(6) NOT NULL,
+  `loginKey` char(32) NOT NULL,
+  `ipAddr` mediumblob NOT NULL,
+  `email` mediumblob NOT NULL,
+  `age` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastLogin` mediumtext NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '1',
+  `bitMask` int(1) NOT NULL DEFAULT '1',
+  `isBanned` varchar(10) NOT NULL DEFAULT '0',
+  `banCount` int(1) NOT NULL DEFAULT '0',
+  `invalidLogins` int(3) NOT NULL DEFAULT '0',
+  `inventory` longtext NOT NULL,
+  `head` int(10) NOT NULL DEFAULT '0',
+  `face` int(10) NOT NULL DEFAULT '0',
+  `neck` int(10) NOT NULL DEFAULT '0',
+  `body` int(10) NOT NULL DEFAULT '0',
+  `hand` int(10) NOT NULL DEFAULT '0',
+  `feet` int(10) NOT NULL DEFAULT '0',
+  `photo` int(10) NOT NULL DEFAULT '0',
+  `flag` int(10) NOT NULL DEFAULT '0',
+  `colour` mediumtext NOT NULL,
+  `coins` int(11) NOT NULL,
+  `isMuted` int(1) NOT NULL DEFAULT '0',
+  `isStaff` int(1) NOT NULL DEFAULT '0',
+  `isAdmin` int(1) NOT NULL DEFAULT '0',
+  `rank` int(1) NOT NULL DEFAULT '1',
+  `buddies` longblob NOT NULL,
+  `ignored` longblob NOT NULL,
+  `isEPF` int(1) NOT NULL DEFAULT '0',
+  `fieldOPStatus` int(1) NOT NULL DEFAULT '0',
+  `epfPoints` int(10) NOT NULL DEFAULT '20',
+  `totalEPFPoints` int(10) NOT NULL DEFAULT '100',
+  `stamps` longblob NOT NULL,
+  `cover` longblob NOT NULL,
+  `restamps` longblob NOT NULL,
+  `nameglow` mediumblob NOT NULL,
+  `namecolour` mediumblob NOT NULL,
+  `bubbletext` mediumblob NOT NULL,
+  `bubblecolour` mediumblob NOT NULL,
+  `penguinglow` mediumblob NOT NULL,
+  `snowballglow` mediumblob NOT NULL,
+  `bubbleglow` mediumblob NOT NULL,
+  `moodglow` mediumblob NOT NULL,
+  `moodcolor` mediumblob NOT NULL,
+  `ringcolour` mediumblob NOT NULL,
+  `chatglow` mediumblob NOT NULL,
+  `speed` int(3) NOT NULL DEFAULT '4',
+  `mood` char(100) NOT NULL,
+  `penguin_size` int(3) NOT NULL,
+  `penguin_blend` mediumblob NOT NULL,
+  `penguin_alpha` int(3) NOT NULL,
+  `isCloneable` int(1) NOT NULL DEFAULT '1',
+  `outfits` longtext NOT NULL,
+  `wow` int(1) NOT NULL DEFAULT '0',
+  `transformation` mediumtext NOT NULL,
+  `title` mediumtext NOT NULL,
+  `titleglow` mediumtext NOT NULL,
+  `titlecolor` mediumtext NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
