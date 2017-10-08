@@ -19,8 +19,8 @@ our $gameConfig = {
 };
 
 our $dbConfig = {
-    dbHost => '127.0.0.1',
+    dbHost => 'localhost',
     dbName => 'Luna',
     dbUser => 'root',
-    dbPass => ''
+    dbPass => 'minecraftSquad'
 };
