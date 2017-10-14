@@ -1,5 +1,7 @@
 package Cryptography;
 
+# // CHANGE THIS TO BCRYPT TO MAKE YOUR CPPS MORE SECURE //
+
 use strict;
 use warnings;
 
