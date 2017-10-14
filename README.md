@@ -4,6 +4,7 @@ Luna
 Club Penguin Server Emulator - AS2 Protocol
 
 Tutorial for VPS: <a href="http://awptical.pw/index.php?/topic/5-how-to-make-an-as2-cpps-on-a-vps/">here.</a>
+<br>
 Tutorial for localhost: <a href="http://awptical.pw/index.php?/topic/6-how-to-make-an-as2-cpps-on-localhost/">here.</a>
 
 ![](https://i.imgur.com/rD2hLCu.png)
