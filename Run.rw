@@ -1,0 +1,7 @@
+@echo off
+rem // USE THIS IS IF YOU WANT, WOULDNT RECOMMEND IT //
+color 2
+echo Developed by OliverBoy @ Github!
+pause
+start /LOW perl Run.pm
+pause > nul

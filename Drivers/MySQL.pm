@@ -258,14 +258,16 @@ method updateWalkingPuffle($blnWalking, $intPuffle, $intOwner) {
 		$resQuery->execute($blnWalking, $intPuffle, $intOwner);
 }
 
-method checkJoinedIglooContest($intID) {
-		my $resQuery = $self->{connection}->prepare("SELECT * FROM igloo_contest WHERE `ID` = ?");
-		$resQuery->execute($intID);
-		my $arrResult = $resQuery->fetchall_arrayref({});
-		if ($arrResult) {
-		   return $arrResult;
-		}
-}
+# // ADD FOR IGLOO PARTYS - REMOVE THE HASHTAGS
+
+# method checkJoinedIglooContest($intID) {
+# 		my $resQuery = $self->{connection}->prepare("SELECT * FROM igloo_contest WHERE `ID` = ?");
+# 		$resQuery->execute($intID);
+# 		my $arrResult = $resQuery->fetchall_arrayref({});
+# 		if ($arrResult) {
+# 		   return $arrResult;
+# 		}
+# }
 
 method getLastDonations($intID) {
 		my $resQuery = $self->{connection}->prepare("SELECT * FROM donations WHERE `ID` = ?");

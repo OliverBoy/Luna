@@ -31,7 +31,7 @@ INTERFACE.updatePlayerWidget = function() {
       INTERFACE.PLAYER_WIDGET.art_mc.pMood_txt.type = "input";
       INTERFACE.PLAYER_WIDGET.art_mc.pMood_txt.onKillFocus = function() {
          if(this.text == " " || this.text == "") {
-            this.text = "Luna ~ I have no mood.";
+            this.text = "DEFAULT MOOD CAN CHANGE";
          }
          var newMood = this.text;
          Players[player_ob.player_id].Mood = newMood;
