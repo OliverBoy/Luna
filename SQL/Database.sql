@@ -32,7 +32,7 @@ CREATE TABLE `postcards` (
   `postcardType` int(5) NOT NULL,
   `isRead` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`postcardID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS `puffles`;
@@ -44,26 +44,9 @@ CREATE TABLE `puffles` (
   `puffleEnergy` int(3) NOT NULL DEFAULT '100',
   `puffleHealth` int(3) NOT NULL DEFAULT '100',
   `puffleRest` int(3) NOT NULL DEFAULT '100',
-  `puffleWalking` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`puffleID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
-
-DROP TABLE IF EXISTS `donations`;
-CREATE TABLE `donations` (
-  `ID` int(11) NOT NULL,
-  `username` longtext NOT NULL,
-  `donation` int(11) NOT NULL,
-  `donate_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `igloo_contest`;
-CREATE TABLE `igloo_contest` (
-  `ID` int(11) NOT NULL,
-  `username` longtext NOT NULL,
-  `signup_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `servers`;
 CREATE TABLE `servers` (
@@ -87,7 +70,7 @@ CREATE TABLE `users` (
   `ipAddr` mediumblob NOT NULL,
   `email` mediumblob NOT NULL,
   `age` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `LastLogin` mediumtext NOT NULL,
+  `LastLogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `active` int(1) NOT NULL DEFAULT '1',
   `bitMask` int(1) NOT NULL DEFAULT '1',
   `isBanned` varchar(10) NOT NULL DEFAULT '0',
@@ -134,14 +117,13 @@ CREATE TABLE `users` (
   `penguin_blend` mediumblob NOT NULL,
   `penguin_alpha` int(3) NOT NULL,
   `isCloneable` int(1) NOT NULL DEFAULT '1',
-  `outfits` longtext NOT NULL,
   `wow` int(1) NOT NULL DEFAULT '0',
   `transformation` mediumtext NOT NULL,
-  `title` mediumtext NOT NULL,
-  `titleglow` mediumtext NOT NULL,
-  `titlecolor` mediumtext NOT NULL,
+  `rotation` mediumtext NOT NULL,
+  `hue` mediumtext NOT NULL,
+  `card_music` mediumtext NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 -- 2016-03-01 19:24:13
